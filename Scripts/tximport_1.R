@@ -10,7 +10,7 @@ tx2gene <- select(txdb, k, "GENEID", "TXNAME")
 names(files) <- paste0("sample", 1:6)
 all(file.exists(files))
 txi <- tximport(files, type = "salmon", tx2gene = tx2gene, ignoreTxVersion = TRUE)
-ddsTxi <- DESeqDataSetFromTximport(txi,colData = samples, design = ~ 1)
+ddsTxi <- DESeqDataSetFromTximport(txi,colData = samples, design = ~ condition)
 dds <- DESeq(ddsTxi)
 res <- results(dds)
 res
