@@ -1,6 +1,7 @@
 library(DESeq2)
 library(readr)
 library(tximport)
+library(GenomicFeatures)
 dir1 <- "/Volumes/scRNAseq_1/SS2_15_0150-0151/"
 samples <- read.csv(file.path(dir1, "patient_2_layout.csv"), header = TRUE)
 dir2 <- "/Volumes/scRNAseq_1/SS2_15_0150-0151/salmon_quant_2/"
