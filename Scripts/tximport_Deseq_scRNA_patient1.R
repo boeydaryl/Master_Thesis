@@ -3,7 +3,7 @@ library(readr)
 library(tximport)
 dir1 <- "/Volumes/scRNAseq_1/SS2_15_0150-0151/"
 samples <- read.csv(file.path(dir1, "patient_1_layout.csv"), header = TRUE)
-dir2 <- "/Volumes/scRNAseq_1/SS2_15_0150-0151/salmon_quant/"
+dir2 <- "/Volumes/scRNAseq_1/SS2_15_0150-0151/salmon_quant_1/"
 files <- file.path(dir2, samples$Well.number,"quant.sf")
 txdb <- makeTxDbFromGFF("/Volumes/scRNAseq_1/Homo_sapiens/ENSEMBL/Homo_sapiens.GRCh38.95.gtf")
 k <- keys(txdb, keytype ="TXNAME")
