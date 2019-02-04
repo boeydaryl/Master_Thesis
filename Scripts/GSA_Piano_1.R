@@ -14,7 +14,7 @@ padj <- geneLevelStats$padj
 log2fc <- geneLevelStats$log2fc
 names(padj) <- names(log2fc) <- geneLevelStats$gene
 gsaRes <- runGSA(padj, log2fc, gsc=gsc)
-networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.05,
+networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.005,
             nodeSize=c(3,20), edgeWidth=c(1,5), overlap=10,
             scoreColors=c("red", "orange", "yellow", "blue", "lightblue", "lightgreen"))
-GSAsummaryTable(gsaRes, save=T, file="/Volumes/scRNAseq_1/P1_vs_IM90/Analysis/gsares.txt")
+#GSAsummaryTable(gsaRes, save=T, file="/Volumes/scRNAseq_1/P4_vs_IM90/Analysis/p4_vs_im90gsares.txt")
