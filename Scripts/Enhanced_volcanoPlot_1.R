@@ -1,8 +1,8 @@
 #Enhanced Volcano Basic Script
 library(EnhancedVolcano)
-EnhancedVolcano(geneLevelStats_p3,
+EnhancedVolcano(geneLevelStats,
                 
-                lab = geneLevelStats_p3$gene,
+                lab = geneLevelStats$gene,
                 
                 x = "log2fc",
                 
