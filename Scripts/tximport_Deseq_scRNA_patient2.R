@@ -16,3 +16,5 @@ ddsTxi <- DESeqDataSetFromTximport(txi,colData = samples, design = ~ Condition)
 dds <- DESeq(ddsTxi)
 res <- results(dds)
 res
+res_p2 <- res[ ! (is.na(res$pvalue) | is.na(res$padj)), ]
+geneLevelStats_p2 <- as.data.frame(res_p2[,c("log2FoldChange","padj")])
