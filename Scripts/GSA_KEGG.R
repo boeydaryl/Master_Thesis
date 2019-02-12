@@ -16,11 +16,11 @@ rownames(geneLevelStats) <- geneLevelStats[,1]
 geneLevelStats <- geneLevelStats[order(geneLevelStats$padj),]
 
 #### Continue from here if geneLevelStats file exists #####
-geneLevelStats <- read.csv("/Volumes/scRNAseq_1/P5_vs_IM90/Analysis/p5vsIM90_geneLevelStat.csv")
+geneLevelStats <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/p1p2p3vsIM90/p0.01/commonGeneLevelStats_exP1.csv")
 
 #### To load appropriate Gene set under gsc #######
 #gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/KEGG/c2.cp.kegg.v6.2.symbols.gmt.txt", type="gmt")
-gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/GSEA/Hallmark_sets/h.all.v6.2.symbols.gmt.txt", type="gmt")
+gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/KEGG/c2.cp.kegg.v6.2.symbols.gmt.txt", type="gmt")
 padj <- geneLevelStats$padj
 log2fc <- geneLevelStats$log2fc
 names(padj) <- names(log2fc) <- geneLevelStats$gene
@@ -41,7 +41,10 @@ GSAheatmap(gsaRes, cutoff = 5, adjusted = FALSE, ncharLabel = 25,
 
 ##### For GSA Summary Table and Boxplot #####
 #GSAsummaryTable(gsaRes, save=T, file="/Volumes/scRNAseq_1/P5_vs_IM90/Analysis/p5_vs_im90gsares_KEGG.txt")
-geneSetSummary(gsaRes, "HALLMARK_GLYCOLYSIS")
+#geneSetSummary(gsaRes, "KEGG_RIBOSOME")
+GSS_specific <- geneSetSummary(gsaRes, "KEGG_TIGHT_JUNCTION")
+write.csv(GSS_specific[["geneLevelStats"]], 
+          file = "/Volumes/scRNAseq_1/Compiled_Analysis/p1p2p3vsIM90/p0.01/GSA/KEGG_TightJcn.csv")
 boxplot(list(-log10(geneLevelStats$padj),
              -log10(geneSetSummary(gsaRes,"HALLMARK_APOPTOSIS")$geneLevelStats)),
         names=c("all","HALLMARK_APOPTOSIS"))
