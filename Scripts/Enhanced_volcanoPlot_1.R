@@ -2,7 +2,7 @@
 library(EnhancedVolcano)
 EnhancedVolcano(geneLevelStats,
                 
-                lab = geneLevelStats$gene,
+                lab = geneLevelStats$rn,
                 
                 x = "log2fc",
                 
