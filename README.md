@@ -4,7 +4,6 @@ Masters Thesis at SOBI
 Repository for working and developmental scripts involved in pipeline for Differential Expression analysis of RNA-seq data.
 
 Tools in use so far include:
-
   sratoolkit for downloading raw FASTQ files from NCBI SRA.
   FASTQC for assessing raw FASTQ files.
   salmon for transcript abundance quantification.
