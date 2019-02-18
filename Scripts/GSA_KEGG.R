@@ -15,14 +15,15 @@ colnames(geneLevelStats) <- c("ensembl","log2fc","padj","gene")
 rownames(geneLevelStats) <- geneLevelStats[,1]
 geneLevelStats <- geneLevelStats[order(geneLevelStats$padj),]
 
-write.csv(geneLevelStats, file = "/Volumes/scRNAseq_1/P3_vs_GSE113957/Analysis/p3vsGSE957_geneLevelStats.csv")
+write.csv(geneLevelStats, file = 
+            "/Volumes/scRNAseq_1/GSE113957vsCLR2097/Analysis/GSE113957vsCLR2097_geneLevelStats.csv")
 
 #### Continue from here if geneLevelStats file exists #####
 geneLevelStats <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/p1p2p3vsGSE957/geneLevelStats_p1_common_p1p2p3vsGSE957.csv")
 
 #### To load appropriate Gene set under gsc #######
-#gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/GSEA/Hallmark_sets/h.all.v6.2.symbols.gmt.txt", type="gmt")
-gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/KEGG/c2.cp.kegg.v6.2.symbols.gmt.txt", type="gmt")
+gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/GSEA/Hallmark_sets/h.all.v6.2.symbols.gmt.txt", type="gmt")
+#gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/KEGG/c2.cp.kegg.v6.2.symbols.gmt.txt", type="gmt")
 padj <- geneLevelStats$padj
 log2fc <- geneLevelStats$log2fc
 names(padj) <- names(log2fc) <- geneLevelStats$gene
@@ -30,7 +31,7 @@ gsaRes <- runGSA(padj, log2fc, gsc=gsc)
 
 
 ##### for network plot, remember to zoom plot first! #######
-networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.05,
+networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.01,
 nodeSize=c(3,20), edgeWidth=c(1,5), overlap=10,
 scoreColors=c("red", "orange", "yellow", "blue", "lightblue", "lightgreen"))
 
