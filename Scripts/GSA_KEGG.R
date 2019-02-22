@@ -6,6 +6,7 @@ library(piano)
 
 
 ##### To prepare geneLevelStats file from DESeq Res #####
+#res <- read.csv("/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsGSE113957+GSE66053/Analysis/p1p2p3vsGSE113957+GSE66053_deseq.csv", row.names = 1)
 res <- res[ ! (is.na(res$pvalue) | is.na(res$padj)), ]
 geneLevelStats <- as.data.frame(res[,c("log2FoldChange","padj")])
 mart <- useMart("ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
@@ -16,10 +17,10 @@ rownames(geneLevelStats) <- geneLevelStats[,1]
 geneLevelStats <- geneLevelStats[order(geneLevelStats$padj),]
 
 write.csv(geneLevelStats, file = 
-            "/Volumes/scRNAseq_1/GSE113957vsCLR2097/Analysis/GSE113957vsCLR2097_geneLevelStats.csv")
+            "/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsGSE113957+GSE66053/Analysis/p1p2p3vsGSE113957+GSE66053_geneLevelStats.csv")
 
 #### Continue from here if geneLevelStats file exists #####
-geneLevelStats <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/p1p2p3vsGSE957/geneLevelStats_p1_common_p1p2p3vsGSE957.csv")
+geneLevelStats <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/GSE113957vsGSE66053_n_p1p2p3/common_geneLevelStats_from_p1p2p3vsGSE66053.csv")
 
 #### To load appropriate Gene set under gsc #######
 gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/GSEA/Hallmark_sets/h.all.v6.2.symbols.gmt.txt", type="gmt")

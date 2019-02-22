@@ -7,7 +7,7 @@ library(tximport)
 library(GenomicFeatures)
 
 #### Directory for abundance files ######
-dir1 <- "/Volumes/scRNAseq_1/P3_vs_GSE113957/"
+dir1 <- "/Volumes/scRNAseq_1/DESeq runs/P3_vs_GSE113957/"
 
 #### To load sample metadata and search for related salmon files #####
 samples <- read.csv(file.path(dir1, "P3_vs_GSE113957.csv"), header = TRUE)
