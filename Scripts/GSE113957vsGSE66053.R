@@ -16,7 +16,7 @@ files <- file.path(dir1, samples$Well.number,"quant.sf")
 txdb <- makeTxDbFromGFF("/Volumes/scRNAseq_1/Homo_sapiens/ENSEMBL/Homo_sapiens.GRCh38.95.gtf")
 k <- keys(txdb, keytype ="TXNAME")
 tx2gene <- select(txdb, k, "GENEID", "TXNAME")
-names(files) <- paste0(samples$Well.number, "_sample", 1:81)
+names(files) <- paste0(samples$Well.number, "_sample", 1:84)
 all(file.exists(files))
 
 #### Actual importation step ####

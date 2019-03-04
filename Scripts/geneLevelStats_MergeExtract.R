@@ -3,10 +3,10 @@ library(plyr)
 
 #### Loading the relevant CSV files #####
 
-common_genes <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/GSE113957vsGSE66053_n_p1p2p3/GSE113957vsGSE66053_n_p1p2p3.csv", header = TRUE)
-p1_geneLevelStats <- read.csv("/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsGSE66053/Analysis/p1p2p3vsGSE66053_geneLevelStats.csv", header = TRUE, row.names = "X")
+common_genes <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/p4p5nGSE113957nGSE66053/p4p5nGSE113957nGSE66053.csv", header = TRUE)
+p1_geneLevelStats <- read.csv("/Volumes/scRNAseq_1/DESeq runs/p4p5_vs_GSE66053/Analysis/p4p5vsGSE66053_geneLevelStats.csv", header = TRUE, row.names = "X")
 
 #### Merging from p1_geneLevelStats to common_genes ####
 
 common_geneLevelStats <- match_df(p1_geneLevelStats, common_genes, on ="ensembl")
-write.csv(common_geneLevelStats, file = "/Volumes/scRNAseq_1/Compiled_Analysis/GSE113957vsGSE66053_n_p1p2p3/common_geneLevelStats_from_p1p2p3vsGSE66053.csv")
+write.csv(common_geneLevelStats, file = "/Volumes/scRNAseq_1/Compiled_Analysis/p4p5nGSE113957nGSE66053/geneLevelStats_from_p4p5vsGSE66053.csv")
