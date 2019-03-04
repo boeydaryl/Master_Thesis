@@ -1,11 +1,98 @@
 Well number,Condition,Sample
-SRR7093809,no disease,GSE113957
-SRR7093874,no disease,GSE113957
-SRR7093875,no disease,GSE113957
-SRR7093876,no disease,GSE113957
-SRR7093877,no disease,GSE113957
-SRR7093944,no disease,GSE113957
-SRR7093951,no disease,GSE113957
+A19,disease,P4
+B19,disease,P4
+C19,disease,P4
+D19,disease,P4
+E19,disease,P4
+F19,disease,P4
+G19,disease,P4
+H19,disease,P4
+I19,disease,P4
+J19,disease,P4
+K19,disease,P4
+L19,disease,P4
+M19,disease,P4
+N19,disease,P4
+O19,disease,P4
+A20,disease,P4
+B20,disease,P4
+C20,disease,P4
+D20,disease,P4
+E20,disease,P4
+F20,disease,P4
+G20,disease,P4
+H20,disease,P4
+I20,disease,P4
+J20,disease,P4
+K20,disease,P4
+L20,disease,P4
+M20,disease,P4
+N20,disease,P4
+O20,disease,P4
+P20,disease,P4
+A21,disease,P4
+B21,disease,P4
+C21,disease,P4
+D21,disease,P4
+E21,disease,P4
+F21,disease,P4
+G21,disease,P4
+H21,disease,P4
+I21,disease,P4
+J21,disease,P4
+K21,disease,P4
+L21,disease,P4
+M21,disease,P4
+N21,disease,P4
+O21,disease,P4
+P21,disease,P4
+A22,disease,P5
+B22,disease,P5
+C22,disease,P5
+D22,disease,P5
+E22,disease,P5
+F22,disease,P5
+G22,disease,P5
+H22,disease,P5
+I22,disease,P5
+J22,disease,P5
+K22,disease,P5
+L22,disease,P5
+M22,disease,P5
+N22,disease,P5
+O22,disease,P5
+A23,disease,P5
+B23,disease,P5
+C23,disease,P5
+D23,disease,P5
+E23,disease,P5
+F23,disease,P5
+G23,disease,P5
+H23,disease,P5
+I23,disease,P5
+J23,disease,P5
+K23,disease,P5
+L23,disease,P5
+M23,disease,P5
+N23,disease,P5
+O23,disease,P5
+P23,disease,P5
+A24,disease,P5
+B24,disease,P5
+C24,disease,P5
+D24,disease,P5
+E24,disease,P5
+F24,disease,P5
+G24,disease,P5
+H24,disease,P5
+I24,disease,P5
+J24,disease,P5
+K24,disease,P5
+L24,disease,P5
+M24,disease,P5
+N24,disease,P5
+O24,disease,P5
+P24,disease,P5
 SRR1810679,no disease,GSE66053
 SRR1810680,no disease,GSE66053
 SRR1810681,no disease,GSE66053
@@ -80,6 +167,13 @@ SRR1810749,no disease,GSE66053
 SRR1810750,no disease,GSE66053
 SRR1810751,no disease,GSE66053
 SRR1810752,no disease,GSE66053
+SRR7093809,no disease,GSE113957
+SRR7093874,no disease,GSE113957
+SRR7093875,no disease,GSE113957
+SRR7093876,no disease,GSE113957
+SRR7093877,no disease,GSE113957
+SRR7093944,no disease,GSE113957
+SRR7093951,no disease,GSE113957
 SRR1810676,no disease,GSE66053
 SRR1810677,no disease,GSE66053
 SRR1810678,no disease,GSE66053
