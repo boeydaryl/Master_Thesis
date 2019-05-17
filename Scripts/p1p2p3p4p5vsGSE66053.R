@@ -4,20 +4,20 @@
 library(DESeq2)
 library(readr)
 library(tximport)
-library("GenomicFeatures", lib.loc="~/Library/R/3.5/library")
+library(GenomicFeatures)
 
 #### Directory for abundance files ######
-dir1 <- "/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsGSE66053/"
+dir1 <- "/Volumes/scRNAseq_1/DESeq runs/p1p2p3p4p5vsGSE66053/"
 
 #### To load sample metadata and search for related salmon files #####
-samples <- read.csv(file.path(dir1, "p1p2p3vsGSE66053.csv"), header = TRUE)
+samples <- read.csv(file.path(dir1, "p1p2p3p4p5vsGSE66053.csv"), header = TRUE)
 files <- file.path(dir1, samples$Well.number,"quant.sf")
 
 #### Annotation from transcripts to genes #####
 txdb <- makeTxDbFromGFF("/Volumes/scRNAseq_1/Homo_sapiens/ENSEMBL/Homo_sapiens.GRCh38.95.gtf")
 k <- keys(txdb, keytype ="TXNAME")
 tx2gene <- select(txdb, k, "GENEID", "TXNAME")
-names(files) <- paste0(samples$Well.number, "_sample", 1:218)
+names(files) <- paste0(samples$Well.number, "_sample", 1:309)
 all(file.exists(files))
 
 #### Actual importation step ####
@@ -30,4 +30,4 @@ res <- results(dds)
 res
 
 write.csv(res, file = 
-            "/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsGSE66053/Analysis/p1p2p3vsGSE66053_deseq.csv")
+            "/Volumes/scRNAseq_1/DESeq runs/p1p2p3p4p5vsGSE66053/Analysis/deseq_full.csv")

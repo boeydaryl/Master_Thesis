@@ -17,10 +17,10 @@ rownames(geneLevelStats) <- geneLevelStats[,1]
 geneLevelStats <- geneLevelStats[order(geneLevelStats$padj),]
 
 write.csv(geneLevelStats, file = 
-            "/Volumes/scRNAseq_1/DESeq runs/p4p5_vs_GSE113957/Analysis/p4p5vsGSE113957_geneLevelStats.csv")
+            "/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsp4p5/Analysis/p1p2p3vsp4p5_geneLevelStats.csv")
 
 #### Continue from here if geneLevelStats file exists #####
-geneLevelStats <- read.csv("/Volumes/scRNAseq_1/Compiled_Analysis/p4p5nGSE113957nGSE66053/geneLevelStats_from_p4p5vsGSE66053.csv")
+geneLevelStats <- read.csv("/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsp4p5/Analysis/p1p2p3vsp4p5_geneLevelStats_edit.csv")
 
 #### To load appropriate Gene set under gsc #######
 #gsc <- loadGSC("/Volumes/scRNAseq_1/Gene_Sets/GSEA/Hallmark_sets/h.all.v6.2.symbols.gmt.txt", type="gmt")
@@ -46,9 +46,9 @@ GSAheatmap(gsaRes, cutoff = 10, adjusted = FALSE, ncharLabel = 40,
 ##### For GSA Summary Table and Boxplot #####
 #GSAsummaryTable(gsaRes, save=T, file="/Volumes/scRNAseq_1/P5_vs_IM90/Analysis/p5_vs_im90gsares_KEGG.txt")
 #geneSetSummary(gsaRes, "KEGG_RIBOSOME")
-GSS_specific <- geneSetSummary(gsaRes, "KEGG_MAPK_SIGNALING_PATHWAY")
+GSS_specific <- geneSetSummary(gsaRes, "KEGG_MTOR_SIGNALING_PATHWAY")
 write.csv(GSS_specific[["geneLevelStats"]], 
-          file = "/Volumes/scRNAseq_1/Compiled_Analysis/p4p5nGSE113957nGSE66053/GSA/KEGG/MAPK_SIGNALING_PATHWAY.csv")
+          file = "/Volumes/scRNAseq_1/DESeq runs/p1p2p3vsp4p5/Analysis/GSA/MTOR_SIGNALING_PATHWAY.csv")
 boxplot(list(-log10(geneLevelStats$padj),
              -log10(geneSetSummary(gsaRes,"HALLMARK_APOPTOSIS")$geneLevelStats)),
         names=c("all","HALLMARK_APOPTOSIS"))
