@@ -6,6 +6,7 @@ library(readr)
 library(tximport)
 library(GenomicFeatures)
 library(biomaRt)
+library(EnsDb.Hsapiens.v86)
 library(piano)
 library(EnhancedVolcano)
 
