@@ -26,12 +26,11 @@ ddsTxi <- DESeqDataSetFromTximport(txi,colData = samples, design = ~ Condition)
 
 #### Runs DESeq and saves results as res ######
 dds <- DESeq(ddsTxi, test = "LRT", reduced= ~ 1)
-dds$group <- factor(paste0(dds$Sample, dds$Condition))
+dds$group <- factor(paste0(dds$Condition, dds$Sample))
 design(dds) <- ~ group
 dds <- DESeq(dds)
 resultsNames(dds)
-results(dds, contrast = c("group", "P1disease", "P2disease"))
-results(dds, Intercept)
+results(dds, contrast = c("group", "GSE66053NoDisease", "GSE113957NoDisease"))
 ddsSave <- dds
 res <- results(dds)
 res
